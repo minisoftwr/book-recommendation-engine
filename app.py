@@ -12,16 +12,21 @@ def index():
 def recommendations():
     try:
         genre = request.args.get('genre')
+        mood = request.args.get('mood')
+
         df = pd.read_csv("enriched_books.csv")
+
         #Filtering the dataframe 
         filtering = df[df['genre'] == genre].head(20)
+
         # converting the list into a dictionary
         books = filtering.to_dict(orient ='records')
+        
     except Exception as e:
         print(f"Error: {e}")
         return render_template("homepage.html")
     
-    return render_template('recommendations.html',books=books,genre=genre)    
+    return render_template('recommendations.html',books=books,genre=genre,mood=mood)    
 
 if __name__ == '__main__':
     app.run(debug=True)   
