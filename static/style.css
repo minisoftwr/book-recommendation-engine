@@ -1,0 +1,215 @@
+:root{
+    --jade:#587568;
+    --cream: #f5f0e6;
+    --ink:#24231f;
+    --cream-dark:#e8dfcf;
+    --muted: #706b61;
+    --jade-dark:#3f5c50;
+    --plum:#72566c;
+    --gold:#b4975a;
+    --gold-light:#d8c48c;
+    --card:#fffdf8;
+}
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    font-family:Inter,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:var(--cream);
+    min-height: 100vh;
+}
+.hero{
+    max-width: 800px;
+    margin:0 auto;
+    padding: 70px 30px 50px;
+    text-align: center;
+}
+.hero h1 {
+    max-width: 700px;
+    margin:0 auto 17px;
+    line-height: 1.4rem;
+    text-align: center;
+    font-size: 2.4rem;
+    letter-spacing: 0.04rem;
+}
+.hero p{
+    max-width: 520px;
+    text-align: center;
+    margin:0 auto;
+    color:var(--muted);
+    font-size: 1.2rem;
+    
+}
+
+/*Form */
+.form-container{
+    max-width: 500px;
+    margin: 20px auto 70px;
+    padding: 30px;
+    background:var(--card);
+    border: 1px solid var(--cream-dark);
+    border-radius: 24px;
+    box-shadow: 0px 40px 40px rgba(40,35,25,0.08);
+}
+
+.label{
+    display: block;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-size: 0.70rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+
+}
+.select{
+    width: 100%;
+    padding: 14px 14px;
+    background:var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: 14px;
+    color:var(--ink);
+    font-size: 1rem;
+    margin-bottom:22px;
+    cursor: pointer;
+    transition: border-color 0.2s,
+        box-shadow 0.2s;
+}
+.select:focus{
+    outline: none;
+    box-shadow:0 0 0 3px #58756826;
+    border-color: var(--jade);
+}
+/*button*/
+.btn{
+    width: 100%;
+    background:var(--jade);
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border:none;
+    padding:15px 20px;
+    border-radius:14px;
+    cursor: pointer;
+    transition: background 0.2s,transform 0.2s;
+}
+.btn:hover{
+    background-color: var(--jade-dark);
+    transform: translateX(-2px) translateY(4px);
+
+}
+
+/* Books Grid */
+
+.book-container {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    gap: 2px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 20px;
+}
+.book-card{
+    background: var(--card);
+    border-radius: 24px;
+    overflow: hidden;
+    border:1px solid var(--cream-dark);
+    box-shadow: 0 13px 30px rgba(40,35,25,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.book-card:hover { 
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(40,35,25,0.12);
+}
+
+.book-cover,
+.no-cover{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+.no-cover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: var(--jade);
+    color:var(--gold-light);
+}
+.book-info{
+    padding:16px;
+}
+.book-info h3 {
+    font-size:1.1rem;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman',serif;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+.author{
+    margin-bottom: 14px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+.genres {
+    display:flex;
+    flex-wrap: wrap;
+    gap:6px;
+}
+.genre-tag{
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 5px 9px;
+    background:#eee7d8 ;
+    color:var(--jade-dark);
+    border-radius: 999px;
+    
+}
+.null {
+    text-align: center;
+    padding: 80px 20px;
+    color:var(--muted);
+    grid-column: 1 / -1;
+}
+.null a{
+    color: var(--jade-dark);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.back-btn{
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--jade);
+    color: white;
+    font-size: 0.85rem;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.back-btn:hover{
+    background: var(--jade-dark);
+}
+/* Responsive */
+@media (max-width: 600px){
+    .hero{
+        padding-top: 60px;
+    }
+    .form-container{
+        padding: 24px;
+    }
+    .book-container{
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap:14px;
+    }
+    .book-cover,.no-cover{
+        height: 230px;
+    }
+}
+    
