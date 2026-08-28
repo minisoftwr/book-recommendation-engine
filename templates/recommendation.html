@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='style.css')}}">
+    <title>Your Recommendation</title>
+</head>
+<body>
+    <div class="hero">
+        <h1>Your Recommendations</h1>
+        <p> Showing <b>{{genre}}</b> books for a <b>{{ mood }}</b> mood</p>
+    </div>
+    <div class="book-container">
+        {% if books %}
+        {% for book in books %}
+        <div class="book-card">
+            {% if book.image %}
+                <img src="{{ book.image }}" alt="{{ book.title }}" class="book-cover">
+            {% else %}
+                <div class="no-cover"></div>
+            {% endif %}
+            <div class="book-info">
+                <h3>{{ book.title }}</h3>
+                <p class="author"> {{ book.authors }}</p>
+                <div class="genres">
+                    {% for genre in book.genre %}
+                    <span class="genre-tag">{{ book.genre }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="null">
+            <p>
+                No book found for this selection.
+                Try a different genre.
+            </p>
+            <a href="/" class="back-btn">
+                Go Back
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

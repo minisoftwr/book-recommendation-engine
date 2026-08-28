@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Book Recommendation</title>
+</head>
+<body>
+    <div class="hero">
+        <h1>Find Your Next Book</h1>
+        <p>Select the option below to get your next recommendation</p>
+    </div>
+    <div class = "form-container">
+        <form action="/recommendations" method="GET">
+            <label for="genre" class="label">Genre</label>
+            <select name="genre" id="genre" class="select" required>
+                <option value="">--- Select the genre of choice ---</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Magic">Magic</option>
+                <option value="Family">Family</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Friendship">Friendship</option>
+                <option value="Coming of age">Coming of age</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Romance">Romance</option>
+                <option value="Horror">Horror</option>
+                <option value="Self-Help">Self-Help</option>
+                <option value="Historical Fiction">Historical Fiction</option>
+                <option value="Science Fiction">Science Fiction</option>
+                <option value="Young Adult">Young Adult</option>
+                <option value="Biography">Biography</option>
+                <option value="Non Fiction">Non Fiction</option>
+            </select>
+            <label for="mood" class="label">How are you feeling</label>
+
+            <select name="mood" id="mood" class="select" required>
+                <option value="">--- How are you feeling ---</option>
+                <option value="Sad">Sad</option>
+                <option value="Happy">Happy</option>
+                <option value="Lost">Lost</option>
+                <option value="Romantic">Romantic</option>
+                <option value="Thrilling">Thrilling</option>
+                <option value="Light">Light</option>
+                <option value="Dark">Dark</option>
+                <option value="Surreal">Surreal</option>
+                <option value="Whimsical">Whimsical</option>
+            </select>
+            <button type="submit" class="btn">
+                Find Your Book
+            </button>
+        </form>
+    </div>
+</body>
+</html>
