@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+*.png
+*.db
+
+books.csv
+cleaned_books.csv
+main_books.csv
