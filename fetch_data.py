@@ -8,24 +8,25 @@ results = []
 books["isbn13"] = (books["isbn13"].astype(str).str.replace(".0","",regex=False))
 
 
-MOOD ={
-    "Fantasy" : ["Surreal","Thrilling","Light","Whimsical","Happy"],
-    "Horror" : ["Dark", "Thrilling"],
-    "Romance" : ["Romantic", "Light","Happy"],
-    "Mystery" : ["Dark", "Thrilling","Happy"],
-    "Self-Help" : ["Thought-provoking", "Light","Lost","Sad"],
-    "Coming of age" : ["Sad", "Thought-provoking","Happy"],
-    "Historical Fiction" : ["Dark", "Thrilling"],
-    "Biography" : ["Thought-provoking"],
-    "Magic" : ["Surreal", "Light","Whimsical","Happy"],
-    "Friendship" : ["Light", "Romantic","Happy"],
-    "Family" : ["Sad","Light"],
-    "Young Adult" : ["Light","Thrilling"],
-    "Science Fiction" :["Surreal"],
-    "Fiction": ["Light","Happy"]
+MOOD = {
+    "Fantasy": ["Surreal", "Thrilling", "Whimsical", "Light"],
+    "Horror": ["Dark", "Thrilling"],
+    "Romance": ["Romantic", "Light", "Happy"],
+    "Mystery": ["Dark", "Thrilling"],
+    "Self-Help": ["Thought-provoking", "Light", "Lost", "Happy"],
+    "Coming of age": ["Sad", "Thought-provoking", "Lost"],
+    "Historical Fiction": ["Thought-provoking", "Sad", "Dark"],
+    "Biography": ["Thought-provoking", "Happy", "Sad"],
+    "Magic": ["Surreal", "Light", "Whimsical"],
+    "Friendship": ["Light", "Happy", "Romantic"],
+    "Family": ["Sad", "Light", "Happy"],
+    "Young Adult": ["Light", "Thrilling", "Happy"],
+    "Science Fiction": ["Surreal", "Thrilling", "Thought-provoking"],
+    "Fiction": ["Light", "Happy", "Thought-provoking"],
+    "History": ["Thought-provoking", "Dark"],
 }
  
-ALLOWED_GENRES = ["Fantasy", "Science Fiction", "Mystery", "Romance", 
+ALLOWED_GENRES = ["Fantasy", "Science Fiction", "Mystery", "Romance","Literary Fiction",
                   "Historical Fiction", "Horror", "Young Adult",
                   "Biography", "Self-Help", "History", "Fiction",
                   "Coming of age", "Friendship", "Magic", "Family","Non Fiction"]
