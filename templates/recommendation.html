@@ -24,7 +24,7 @@
                 <h3>{{ book.title }}</h3>
                 <p class="author"> {{ book.authors }}</p>
                 <div class="genres">
-                    {% for genre in book.genre[:3] %} <!-- only taking the  gernees to mske it look more presentable -->
+                    {% for genre in book.genre[:3] %} <!-- only taking the top three genre to make it look more presentable -->
                     <span class="genre-tag">{{ genre }}</span>
                     {% endfor %}
                 </div>
@@ -33,7 +33,7 @@
             <!-- Rating-->
              {% if book.average_rating %}
             <div class="rating">
-                {{ "%.2f"|format(book.average_rating) }}
+                {{ "%.2f"|format(book.average_rating)}}
             </div>
             {% endif %}
         </div>
