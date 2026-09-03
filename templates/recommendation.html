@@ -28,14 +28,13 @@
                     <span class="genre-tag">{{ genre }}</span>
                     {% endfor %}
                 </div>
-                
-            </div>
-            <!-- Rating-->
-             {% if book.average_rating %}
-            <div class="rating">
+                <!-- Rating-->
+                {% if book.average_rating %}
+                <div class="rating">
                 {{ "%.2f"|format(book.average_rating)}}
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
         </div>
         {% endfor %}
         {% else %}
