@@ -160,6 +160,13 @@ body{
     flex-wrap: wrap;
     gap:6px;
 }
+.rating{
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-size:0.85rem;
+    padding-top: 12px;
+
+}
 .genre-tag{
     font-size: 0.7rem;
     font-weight: 600;
