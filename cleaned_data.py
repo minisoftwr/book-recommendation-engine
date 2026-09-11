@@ -32,10 +32,10 @@ def clean_book():
 
     #Remove the books without title
     df = df.dropna(subset=["title"])
-    # Remove invalide reviews
+    # Remove invalid reviews
     df["average_rating"] = pd.to_numeric(df["average_rating"],errors="coerce")
     df = df[df["average_rating"] .between(0,5)]
-    # drop books with non isb3 as cant be used 
+    # drop books with non isbn3 as cant be used 
     df = df.dropna(subset=["isbn13"])
     #renaming language code to language
     df = df.rename(columns={"language_code":"language"})
@@ -46,7 +46,7 @@ def clean_book():
     #the text columns
     text_col= ["title","authors","publisher"]
 
-    #Ensure the follwing columns are numerical
+    #Ensure the following columns are numerical
     num_col =["ratings_count","text_reviews_count","num_pages"]
     # cleaning the Text columns
     for col in text_col:
