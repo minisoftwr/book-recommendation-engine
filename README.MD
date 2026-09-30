@@ -6,7 +6,7 @@
 
 ## What it does
 
-This Book Recommendation Engine was built using Flask and Python. The project uses the dataset from Kaggle and enriches the dataset using Open Library API.This was necessary because some of the information required for the recommendation system,such as book genres and cover images, was not available in the origanl dataset.After cleaning and processing the data, the application recommends books based user's selected **genre** and **mood**.
+This Book Recommendation Engine was built using Flask and Python. The project uses the dataset from Kaggle and enriches the dataset using Open Library API.This was necessary because some of the information required for the recommendation system,such as book genres and cover images, was not available in the original dataset.After cleaning and processing the data, the application recommends books based user's selected **genre** and **mood**.
 The recommendation system uses **TF-IDF** and **Cosine Similarity** to compare user preferences with book features and rank the most relevant books.
 
 ---
